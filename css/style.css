@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #2b2d42;
+    --accent-color: #6c63ff;
+    --gradient-start: #2b2d42;
+    --gradient-end: #1a1b2e;
+    --bg-color: #f8f9fa;
+    --text-color: #2b2d42;
+    --section-bg: #ffffff;
+    --skill-bg: rgba(108, 99, 255, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(108, 99, 255, 0.1) 0%, transparent 50%);
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-top: 1rem;
+    color: #e0e0e0;
+}
+
+main {
+    max-width: 1100px;
+    margin: -3rem auto 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    background: var(--section-bg);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category {
+    background: var(--skill-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(108, 99, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    background: rgba(108, 99, 255, 0.12);
+    transform: translateY(-3px);
+}
+
+h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin-top: 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--accent-color);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.social-links a:hover {
+    color: rgba(119, 85, 198, 0.461);
+}
+
+social-links a:hover::before {
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.company-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.company-item {
+    background: var(--skill-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.company-item:hover {
+    transform: translateY(-3px);
+    background: rgba(108, 99, 255, 0.12);
+}
+
+.company-item h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.period {
+    display: block;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    main {
+        margin-top: -2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 2rem;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-links a {
+        width: 200px;
+        text-align: center;
+    }
+}
